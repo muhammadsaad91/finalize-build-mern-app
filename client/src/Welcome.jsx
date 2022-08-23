@@ -43,7 +43,7 @@ const App = () => {
 
 
     return (
-        <div>
+        <div className="form-wrapper">
             <h1>Welcome  {data.name}</h1>
         </div>
     );
