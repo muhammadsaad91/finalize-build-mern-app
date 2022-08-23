@@ -26,14 +26,14 @@ app.use(require('./router/auth'));
 // }
 
 
-app.get('/', (req, res) => {
-  res.send('Hello World!  saad is here at login')
-})
+// app.get('/', (req, res) => {
+//   res.send('Hello World!  saad is here at login')
+// })
 
-app.get('/signup', (req, res) => {
-  res.send('Hello World!  saad is here at signup')
-}
-)
+// app.get('/signup', (req, res) => {
+//   res.send('Hello World!  saad is here at signup')
+// }
+// )
 
 
 if (process.env.NODE_ENV === 'production') {
