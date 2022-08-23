@@ -1,6 +1,5 @@
 const express = require('express');
 const app = express();
-const port = 5000;
 const dotenv = require('dotenv');
 const cookieParser = require('cookie-parser'); 
 app.use(cookieParser());
@@ -39,13 +38,11 @@ app.get('/signup', (req, res) => {
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('frontend/build'));
-  app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
-  }
-  );
 }
 
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`Server started on port ${PORT}`);
+}
+);
