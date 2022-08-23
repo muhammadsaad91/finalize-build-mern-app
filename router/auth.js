@@ -10,9 +10,9 @@ router.use(cookieParser());
 require('../db/conn');
 const User = require('../model/Schema');
 
-router.get('/', (req, res) => {
-    res.send('Hello World!  saad is here at login at auth page')
-})
+// router.get('/', (req, res) => {
+//     res.send('Hello World!  saad is here at login at auth page')
+// })
 
 router.post('/register', async (req, res) => {
     const { name, username, phonenumber, password, confirmpassword } = req.body;
