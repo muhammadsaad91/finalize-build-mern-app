@@ -7,11 +7,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 const Signup = () => {
-    function isValidEmail(email) {
-        return /\S+@\S+\.\S+/.test(email);
-      }
-
-    const navigate = useNavigate();
+     const navigate = useNavigate();
 
     const [user, setUser] = useState({
         name: "",
@@ -42,6 +38,18 @@ const Signup = () => {
             password,
             confirmpassword,
         };
+
+        if (data.username.endsWith(".com")) {
+
+            if(data.password.length < 5){
+                alert("Password must be atleast 5 characters");
+                return;
+            }
+            if (data.phonenumber.length !== 10) {
+                alert("This is not valid phone number");
+                return;
+            }
+
         const response = await fetch("/register", {
             method: "POST",
             headers: {
@@ -65,7 +73,12 @@ const Signup = () => {
             alert("User already exists");
         }
 
+
     }
+    else {
+        alert("Please enter a valid email");
+    }
+}
     return (
         <>
 
