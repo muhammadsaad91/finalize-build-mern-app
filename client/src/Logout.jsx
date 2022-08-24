@@ -7,9 +7,8 @@ const App = () => {
 
      const clicked = async () => {
            let confirm = window.confirm("Are you sure you want to logout?");
-              if (confirm) {
-            
-        fetch("/logout", {
+              if (confirm) {            
+        fetch("/logout", { 
             method: "GET",
             headers: {
                 Accept: "application/json",
