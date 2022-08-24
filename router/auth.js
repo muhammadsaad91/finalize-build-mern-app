@@ -62,7 +62,6 @@ router.post('/signin', async (req, res) => {
             console.log(token);
             
             res.cookie('token', token),{
-            expires: new Date(Date.now() + 360000),
             httpOnly: true
             }
             res.status(200).json({ msg: 'Successfully logged in', token });
