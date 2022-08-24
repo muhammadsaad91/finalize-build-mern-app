@@ -6,6 +6,9 @@ const App = () => {
     const navigate = useNavigate();
 
      const clicked = async () => {
+           let confirm = window.confirm("Are you sure you want to logout?");
+              if (confirm) {
+            
         fetch("/logout", {
             method: "GET",
             headers: {
@@ -21,6 +24,9 @@ const App = () => {
         }).catch(error => {
             console.log(error);
         });
+    
+            }
+
     }
 
      useEffect(() => {
