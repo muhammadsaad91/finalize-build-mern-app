@@ -42,8 +42,10 @@ const App = () => {
         <div className="form-item">
             <div className="form-wrapper">
                 <h1>Welcome {data.name}</h1>
-                <h4>Your Contact Number is: {data.phonenumber}</h4>
-                <h4>Your Email is: {data.username}</h4>
+                <div className="data">
+                    <h5>Your Contact Number is: {data.phonenumber}</h5>
+                    <h5>Your Email is: {data.username}</h5>
+                </div>
             </div>
         </div>
     );
