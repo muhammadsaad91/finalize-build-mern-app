@@ -21,14 +21,14 @@ const App = () => {
         if (response.status === 200) {
             dispatch({type: "USER"
             , payload: false});
-            // window.location.href = "/login";
+            navigate("/login" , {replace: true});
         }
     }).catch(error => {
         console.log(error);
     });
     }
     else {
-           navigate("/", {replace: true});   
+        window.history.back();
     }
 }
     useEffect (() => {
