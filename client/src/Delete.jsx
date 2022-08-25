@@ -5,7 +5,7 @@ import { Usercontext } from "./App";
 const App = () => {
     const {state, dispatch} = React.useContext(Usercontext);
     const deleteAccount = async () => {
-    let confirm = window.confirm("Are you sure you want to delete your account?");
+    let confirm = window.confirm("Are you sure you want to DELETE your account? Permanently  ?");
          if (confirm) {
     fetch("/delete", {
         method: "DELETE",
@@ -18,7 +18,7 @@ const App = () => {
         if (response.status === 200) {
             dispatch({type: "USER"
             , payload: false});
-            window.location.href = "/login";
+            // window.location.href = "/login";
         }
     }).catch(error => {
         console.log(error);
