@@ -6,6 +6,7 @@ import { useEffect } from "react";
 
 
 const App = () => {
+    const [login , setLogin] = useState(false);
     const navigate = useNavigate();
     const { state, dispatch } = React.useContext(Usercontext);
     const [user, setUser] = useState({
@@ -42,6 +43,7 @@ const App = () => {
         if (response.status === 200) {
             dispatch({type: "USER"
             , payload: true});
+            setLogin(true);
             
         if (jsonData.msg === "Please Fill all fields"){
             alert("Please Fill all fields");
@@ -73,7 +75,9 @@ const App = () => {
     }
 
     useEffect(() => {
-   navigate("/");
+        if (!login) {
+            navigate("/");
+        }
     }, []);
 
 
