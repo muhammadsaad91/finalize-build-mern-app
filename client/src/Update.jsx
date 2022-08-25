@@ -2,11 +2,11 @@ import React from "react";
 import { useState } from "react";
 import { Usercontext } from "./App";
 import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 
 
 const App = () => {
-    const [login , setLogin] = useState(false);
+    // const [login , setLogin] = useState(false);
     const navigate = useNavigate();
     const { state, dispatch } = React.useContext(Usercontext);
     const [user, setUser] = useState({
@@ -43,7 +43,6 @@ const App = () => {
         if (response.status === 200) {
             dispatch({type: "USER"
             , payload: true});
-            setLogin(true);
             
         if (jsonData.msg === "Please Fill all fields"){
             alert("Please Fill all fields");
@@ -74,11 +73,11 @@ const App = () => {
        }
     }
 
-    useEffect(() => {
-        if (!login) {
-            navigate("/");
-        }
-    }, []);
+    // useEffect(() => {
+    //     if (!login) {
+    //         navigate("/");
+    //     }
+    // }, []);
 
 
     return (
