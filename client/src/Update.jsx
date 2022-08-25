@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { Usercontext } from "./App";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 
 const App = () => {
@@ -64,6 +65,9 @@ const App = () => {
         }
     }
 
+    useEffect(() => {
+      postdata();
+    }, []);
 
 
     return (
