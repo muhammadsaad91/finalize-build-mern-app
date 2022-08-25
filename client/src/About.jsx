@@ -2,8 +2,11 @@ import React from "react";
 import { useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 import { useState } from "react";
+import { Usercontext } from "./App";
+
 
 const App = () => {
+    const {state, dispatch} = React.useContext(Usercontext);
     const navigate = useNavigate();
     const [data, setData] = useState([]);
 
@@ -22,7 +25,9 @@ const App = () => {
             setData(data);
 
             if (response.status === 200) {
-                console.log("success");
+                dispatch({type: "USER"
+                , payload: true});
+                // console.log("success");
                 navigate("/about");
             }
             else {

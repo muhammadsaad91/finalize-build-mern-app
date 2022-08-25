@@ -1,8 +1,8 @@
 import React from "react";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import "./index.css";
 import { useNavigate } from 'react-router-dom';
+import "./index.css";
 
 
 const Login = () => {

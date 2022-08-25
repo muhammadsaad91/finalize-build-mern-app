@@ -1,8 +1,10 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { Usercontext } from "./App";
 
 
 const App = () => {
+     const {state, dispatch} = React.useContext(Usercontext);
     const navigate = useNavigate();
 
      const clicked = async () => {
@@ -18,6 +20,8 @@ const App = () => {
         }).then(response => {
             navigate("/login" , {replace: true});
             if (response.status === 200) {
+                dispatch({type: "USER"
+                , payload: false});
                 alert("Logout Successfully");
             }
         }).catch(error => {
@@ -32,10 +36,5 @@ const App = () => {
         clicked();
     } , []);
 
-    return (
-        <div className="logout">
-           <button onClick={clicked}>Logout</button>
-        </div>
-    );
 }
 export default App;
