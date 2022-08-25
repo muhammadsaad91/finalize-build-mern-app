@@ -22,7 +22,7 @@ const App = () => {
             if (response.status === 200) {
                 dispatch({type: "USER"
                 , payload: false});
-                alert("Logout Successfully");
+                // alert("Logout Successfully");
             }
         }).catch(error => {
             console.log(error);

@@ -19,7 +19,7 @@ const Navbar = () => {
    <NavLink to="/" className="nav-link">Welcome</NavLink>
      <NavLink to="/about" className="nav-link">About</NavLink>
      {/* <NavLink to="/login" className="nav-link">login</NavLink> */}
-    {/* <NavLink to="/signup" className="nav-link">Register</NavLink>  */}
+    <NavLink to="/delete" className="nav-link">Delete Accout</NavLink> 
      <NavLink to="/logout" className="nav-link">Logout</NavLink>
    </div>
  </div>

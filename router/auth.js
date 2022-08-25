@@ -92,6 +92,19 @@ router.get('/logout', authenticate, async (req, res) => {
 }
 );
 
+router.delete('/delete', authenticate, async (req, res) => {
+    try{
+        await User.findByIdAndDelete(req.user._id);
+        res.json({ msg: 'User deleted' });
+    }
+    catch(err){
+        console.error(err.message);
+        res.status(500).send('Server Error');
+    }
+}
+);
+
+
 module.exports = router;
 
         

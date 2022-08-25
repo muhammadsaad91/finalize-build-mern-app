@@ -45,8 +45,8 @@ const Signup = () => {
                 alert("Password must be atleast 5 characters");
                 return;
             }
-            if (data.phonenumber.length !== 10) {
-                alert("This is not valid phone number");
+            if (data.phonenumber.length <= 10) {
+                alert("This is not a valid phone number");
                 return;
             }
 

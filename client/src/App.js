@@ -6,6 +6,7 @@ import { Routes , Route } from "react-router-dom";
 import Navbar from "./Navbar";
 import About from "./About";
 import Logout from "./Logout";
+import Delete from "./Delete";
 import { createContext } from "react";
 import { initialState , reducer  } from "./UseReducer";
 
@@ -23,6 +24,7 @@ export const Usercontext = createContext();
         <Route exact path="/login" element={<Login/>} />
         <Route exact path="/signup" element={<Signup/>} />
         <Route path="/logout" element={<Logout/>} />
+        <Route path="/delete" element={<Delete/>} />
     </Routes>
 </Usercontext.Provider>
     </>
