@@ -39,8 +39,10 @@ const App = () => {
         });
         const jsonData = await response.json();
         console.log(jsonData);
-        dispatch({type: "USER"
-        , payload: true});
+        if (response.status === 200) {
+            dispatch({type: "USER"
+            , payload: true});
+            
         if (jsonData.msg === "Please Fill all fields"){
             alert("Please Fill all fields");
             return;
@@ -63,10 +65,15 @@ const App = () => {
             alert("Something Went Wrong");
             return;
         }
+
+        }
+       else{
+        navigate("/login");
+       }
     }
 
     useEffect(() => {
-      postdata();
+   navigate("/");
     }, []);
 
 
