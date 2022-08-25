@@ -1,8 +1,9 @@
 import React from "react";
 import { useState } from "react";
-// import { useEffect } from "react";
+import { Usercontext } from "./App";
 
 const App = () => {
+    const { state, dispatch } = React.useContext(Usercontext);
     const [user, setUser] = useState({
         password: "",
         confirmpassword: "",
@@ -34,13 +35,24 @@ const App = () => {
         });
         const jsonData = await response.json();
         console.log(jsonData);
-        if (jsonData.status === "success") {
+        if (jsonData.msg === "Please Fill all fields"){
+            dispatch({type: "USER"
+                    , payload: true});
+            alert("Please Fill all fields");
+            return;
+        }
+        
+        else if (jsonData.msg === "Password updated") {
             alert("Password updated successfully");
             return;
         }
-
-        if (jsonData.status === "fail") {
-            alert("Password update failed");
+        else if (jsonData.msg === "Passwords does not match") {
+            alert("Passwords does not match");
+            return;
+        }
+    
+        else{
+            alert("Something Went Wrong");
             return;
         }
     }

@@ -26,7 +26,6 @@ const App = () => {
                 if (response.status === 200) {
                     dispatch({type: "USER"
                     , payload: true});
-                    // console.log("success");
                     navigate("/");
                 }
                else{
