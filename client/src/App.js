@@ -7,6 +7,7 @@ import Navbar from "./Navbar";
 import About from "./About";
 import Logout from "./Logout";
 import Delete from "./Delete";
+import Update from "./Update";
 import { createContext } from "react";
 import { initialState , reducer  } from "./UseReducer";
 
@@ -25,6 +26,7 @@ export const Usercontext = createContext();
         <Route exact path="/signup" element={<Signup/>} />
         <Route path="/logout" element={<Logout/>} />
         <Route path="/delete" element={<Delete/>} />
+        <Route path="/update" element={<Update/>} />
     </Routes>
 </Usercontext.Provider>
     </>

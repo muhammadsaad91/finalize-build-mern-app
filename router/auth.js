@@ -104,6 +104,27 @@ router.delete('/delete', authenticate, async (req, res) => {
 }
 );
 
+// update login user password and confirmpassword
+router.put('/update', authenticate, async (req, res) => {
+    try{
+        const { password, confirmpassword } = req.body;
+        if (!password || !confirmpassword) {
+            return res.status(400).json({ msg: 'Please Fill all fields' });
+        }
+        if (password !== confirmpassword) {
+            return res.status(400).json({ msg: 'Passwords do not match' });
+        }
+        const user = await User.findByIdAndUpdate(req.user._id, { password, confirmpassword });
+        res.json({ msg: 'Password updated' });
+    }
+    catch(err){
+        console.error(err.message);
+        res.status(500).send('Server Error');
+    }
+}
+);
+
+
 
 module.exports = router;
 

@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { Usercontext } from "./App";
 
 
+
 const Navbar = () => {
   const {state, dispatch} = React.useContext(Usercontext);
    
@@ -20,6 +21,7 @@ const Navbar = () => {
      <NavLink to="/about" className="nav-link">About</NavLink>
      {/* <NavLink to="/login" className="nav-link">login</NavLink> */}
      <NavLink to="/logout" className="nav-link">Logout</NavLink>
+     <NavLink to="/update" className="nav-link">Update Password</NavLink>
     <NavLink to="/delete" className="nav-link" style={{color: "red"}}>Delete Accout</NavLink> 
    </div>
  </div>
@@ -41,7 +43,9 @@ const Navbar = () => {
      <NavLink to="/about" className="nav-link">About</NavLink>
      <NavLink to="/login" className="nav-link">Login</NavLink>
     <NavLink to="/signup" className="nav-link">Register</NavLink> 
-     {/* <NavLink to="/logout" className="nav-link">Logout</NavLink> */}
+    <NavLink to="/update" className="nav-link">Update Password</NavLink>
+
+
    </div>
  </div>
 </nav>
