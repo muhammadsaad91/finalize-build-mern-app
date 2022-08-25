@@ -30,7 +30,7 @@ const App = () => {
     
             }
             else {
-                return;
+                 window.history.back();
             }
 
     }
