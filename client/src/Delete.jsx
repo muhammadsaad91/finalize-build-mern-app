@@ -1,8 +1,11 @@
 import React from "react";
 import { useEffect } from "react";
 import { Usercontext } from "./App";
+import { useNavigate } from "react-router-dom";
+
 
 const App = () => {
+    const navigate = useNavigate();
     const {state, dispatch} = React.useContext(Usercontext);
     const deleteAccount = async () => {
     let confirm = window.confirm("Are you sure you want to DELETE your account? Permanently  ?");
@@ -25,7 +28,7 @@ const App = () => {
     });
     }
     else {
-            window.history.back();
+           navigate("/", {replace: true});   
     }
 }
     useEffect (() => {
