@@ -55,11 +55,16 @@ const App = () => {
             return;
         }
     
+        else if (jsonData.msg === "No token, authorization denied") {
+            navigate("/");
+        }
         else{
             alert("Something Went Wrong");
             return;
         }
     }
+
+
 
     return (
     <>
