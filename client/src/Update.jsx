@@ -1,8 +1,11 @@
 import React from "react";
 import { useState } from "react";
 import { Usercontext } from "./App";
+import { useNavigate } from "react-router-dom";
+
 
 const App = () => {
+    const navigate = useNavigate();
     const { state, dispatch } = React.useContext(Usercontext);
     const [user, setUser] = useState({
         password: "",
@@ -35,15 +38,16 @@ const App = () => {
         });
         const jsonData = await response.json();
         console.log(jsonData);
+        dispatch({type: "USER"
+        , payload: true});
         if (jsonData.msg === "Please Fill all fields"){
-            dispatch({type: "USER"
-                    , payload: true});
             alert("Please Fill all fields");
             return;
         }
         
         else if (jsonData.msg === "Password updated") {
             alert("Password updated successfully");
+            navigate("/about");
             return;
         }
         else if (jsonData.msg === "Passwords does not match") {
