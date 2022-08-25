@@ -29,6 +29,9 @@ const App = () => {
         });
     
             }
+            else {
+                navigate("/");
+            }
 
     }
 
