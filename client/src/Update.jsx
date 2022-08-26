@@ -78,14 +78,9 @@ const App = () => {
     
     useEffect(() => {
         if (!state) {
-            navigate("/login");
+            navigate("/about");
         }
-        else {
-            navigate("/update");
-            dispatch({type: "USER"
-            , payload: true});
-        }
-    }, []);
+    }, [ state, navigate ]);
 
 
 
