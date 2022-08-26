@@ -32,7 +32,12 @@ const App = () => {
     }
 }
     useEffect (() => {
-     deleteAccount();   
+        if (!state){
+            navigate("/login");
+        }
+        else {
+            deleteAccount();
+        }
    } , []);
 }
 

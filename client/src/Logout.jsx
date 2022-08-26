@@ -36,7 +36,12 @@ const App = () => {
     }
 
      useEffect(() => {
+        if (!state){
+            navigate("/login");
+        }
+        else {
         clicked();
+        }
     } , []);
 
 }
