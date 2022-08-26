@@ -10,7 +10,6 @@ const App = () => {
     const { state, dispatch } = React.useContext(Usercontext);
     const navigate = useNavigate();
 
-    // const [login , setLogin] = useState(false);
     const [user, setUser] = useState({
         password: "",
         confirmpassword: "",
@@ -81,7 +80,10 @@ const App = () => {
         if (!state) {
             navigate("/login");
         }
-    }, [state , navigate]);
+        else {
+            navigate("/update");
+        }
+    }, []);
 
 
 
