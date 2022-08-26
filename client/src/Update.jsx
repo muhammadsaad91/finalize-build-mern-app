@@ -2,13 +2,19 @@ import React from "react";
 import { useState } from "react";
 import { Usercontext } from "./App";
 import { useNavigate } from "react-router-dom";
-// import { useEffect } from "react";
+import { useEffect } from "react";
 
 
 const App = () => {
-    // const [login , setLogin] = useState(false);
-    const navigate = useNavigate();
+
     const { state, dispatch } = React.useContext(Usercontext);
+    const navigate = useNavigate();
+    const check = () => {
+            if (state){
+                navigate("/");
+            }
+        }
+    // const [login , setLogin] = useState(false);
     const [user, setUser] = useState({
         password: "",
         confirmpassword: "",
@@ -73,11 +79,11 @@ const App = () => {
        }
     }
 
-    // useEffect(() => {
-    //     if (!login) {
-    //         navigate("/");
-    //     }
-    // }, []);
+    useEffect(() => {
+        check();
+    }, []);
+
+
 
 
     return (
