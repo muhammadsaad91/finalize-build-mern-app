@@ -82,6 +82,8 @@ const App = () => {
         }
         else {
             navigate("/update");
+            dispatch({type: "USER"
+            , payload: true});
         }
     }, []);
 
